@@ -1,0 +1,1250 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>高密市检查站巡控平台</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/jqgrid/ui.jqgrid.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/jquery.bxslider.css" />
+	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/step-six.css" />
+	<link rel="stylesheet" href="css/step-seven.css" />
+
+
+	<style type="text/css">
+		#tagscloud,
+		#tagscloud1 {
+			position: relative;
+			/*font-size: 36px;*/
+			color: #333;
+			text-align: center;
+			top: 120px;
+		}
+
+		#tagscloud a,
+		#tagscloud1 a {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			color: #333;
+			font-family: Arial;
+			text-decoration: none;
+			margin: 0 10px 10px 0;
+			/*line-height: 48px;*/
+			text-align: center;
+			/*font-size: 36px;*/
+			padding: 1px 5px;
+			display: inline-block;
+			border-radius: 3px;
+		}
+
+		#tagscloud a,
+		#tagscloud1 a {
+			cursor: pointer;
+			color: #DDBD4D;
+		}
+
+		#tagscloud a:nth-child(2n),
+		#tagscloud1 a:nth-child(2n) {
+			color: #E43F3D;
+		}
+
+		#tagscloud a:nth-child(3n),
+		#tagscloud1 a:nth-child(3n) {
+			color: #E98E2C;
+		}
+
+		#tagscloud a:nth-child(4n),
+		#tagscloud1 a:nth-child(4n) {
+			color: #7CBB55;
+		}
+
+		#tagscloud a:nth-child(5n),
+		#tagscloud1 a:nth-child(5n) {
+			color: #9CD6CE;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<div class="top">
+			<span class="zhiban">值班领导：
+				<label>刘润勤</label> 丨
+				<label>13953688086</label>
+			</span>
+			<div class="title">
+				<img src="images/jinghui.png" />
+				<span>高密市智慧巡控平台</span>
+			</div>
+			<div class="weather">
+				<div class="weather-address">
+					<img id="weatherimg" src="images/duoyun.png" />
+					<p>山东 高密</p>
+				</div>
+				<div class="weather-type">
+					<div>
+						<label class="weather-label">
+							<span id="weathertmp">5</span>
+							<span class="weath-unit">℃</span>
+						</label>
+						<span class="weather-span" id="weathertype"> 多云</span>
+					</div>
+					<span class="weather-time" id="divT">2017-09-18 16:42</span>
+				</div>
+			</div>
+		</div>
+		<div class="left">
+			<div class="step-one">
+				<div class="one-title-div">
+					<span class="title-span">
+						<label id="ts-title">总体态势</label>
+					</span>
+				</div>
+				<div class="ts-name-div">
+					<div class="ts-name-div-div">
+						<div class="ts-name select" id="ts-name-zt">总体</div>
+					</div>
+					<div class="ts-name-div-div">
+						<div class="ts-name" id="ts-name-jr">今日</div>
+					</div>
+				</div>
+
+				<div class="ts-qty-div">
+					<div class="ts-qty-div-div">
+						<p>核查人数：</p>
+						<span>34922</span>
+					</div>
+					<div class="ts-qty-div-div">
+						<p>重点人数：</p>
+						<span>488</span>
+					</div>
+					<div class="ts-qty-div-div">
+						<p>核查车辆：</p>
+						<span>6525</span>
+					</div>
+					<div class="ts-qty-div-div">
+						<p>重点车数：</p>
+						<span>125</span>
+					</div>
+				</div>
+				<div class="ts-station-point">
+					<div class="jz-jcz green">
+						<span>姜庄检察站</span>
+						<div class="one-dialog">
+							<div class="one-dialog-title">姜庄检察站</div>
+							<div class="one-dialog-num-p">当前人流数：<span>2603</span></div>
+							<div class="one-dialog-num-c">当前车流数：<span>530</span></div>
+							<div class="one-dialog-close"></div>
+						</div>
+					</div>
+					<div class="qy-gs-jcz red">
+						<span>青银高速检察站</span>
+						<div class="one-dialog">
+							<div class="one-dialog-title">青银高速检察站</div>
+							<div class="one-dialog-num-p">当前人流数：<span>2603</span></div>
+							<div class="one-dialog-num-c">当前车流数：<span>530</span></div>
+							<div class="one-dialog-close"></div>
+						</div>
+					</div>
+					<div class="hy-jcz green">
+						<span>河崖检察站</span>
+						<div class="one-dialog">
+							<div class="one-dialog-title">河崖检察站</div>
+							<div class="one-dialog-num-p">当前人流数：<span>2603</span></div>
+							<div class="one-dialog-num-c">当前车流数：<span>530</span></div>
+							<div class="one-dialog-close"></div>
+						</div>
+					</div>
+					<div class="gm-hcz green">
+						<span>高密火车站</span>
+						<div class="one-dialog">
+							<div class="one-dialog-title">高密火车站</div>
+							<div class="one-dialog-num-p">当前人流数：<span>2603</span></div>
+							<div class="one-dialog-num-c">当前车流数：<span>530</span></div>
+							<div class="one-dialog-close"></div>
+						</div>
+					</div>
+					<div class="qcz green">
+						<span>汽车站</span>
+						<div class="one-dialog">
+							<div class="one-dialog-title">汽车站</div>
+							<div class="one-dialog-num-p">当前人流数：<span>2603</span></div>
+							<div class="one-dialog-num-c">当前车流数：<span>530</span></div>
+							<div class="one-dialog-close"></div>
+						</div>
+					</div>
+					<div class="ljy-jcz red">
+						<span>李家营检查站</span>
+						<div class="one-dialog">
+							<div class="one-dialog-title">李家营检查站</div>
+							<div class="one-dialog-num-p">当前人流数：<span>2603</span></div>
+							<div class="one-dialog-num-c">当前车流数：<span>530</span></div>
+							<div class="one-dialog-close"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="step-two">
+				<div class="two-title-div">
+					<span class="title-span">
+						<label>重点人/车预警</label>
+					</span>
+				</div>
+				<div class="two-card-div">
+					<!--<img id="two-card-prev" src="images/new/two-left-arrow.png">-->
+					<div class="two-card-content">
+						<ul class="bxslider" style="display: none;">
+							<li>
+								<div class="two-card-content-person-left">
+									<img class="two-card-content-person-photo" src="images/new/two-person-photo.jpg">
+									<p class="two-card-content-person-status">已核查</p>
+								</div>
+								<div class="two-card-content-person-right">
+									<div class="two-card-content-person-name">
+										<p>李四（湖北武汉）</p>
+									</div>
+									<div class="two-card-content-person-info">
+										<div>
+											<img src="images/new/two-person-type.png">
+											<p>上访</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-address.png">
+											<p>高密市河崖镇</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-time.png">
+											<p>2018-03-13 09:15</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-card.png">
+											<p>420701197608110293</p>
+										</div>
+									</div>
+									<div class="two-card-content-person-sum">
+										<p>今日累计：5次</p>
+									</div>
+									<img class="two-card-content-person-icon" src="images/new/two-person.png">
+								</div>
+							</li>
+							<li>
+								<div class="two-card-content-person-left">
+									<img class="two-card-content-person-photo" src="images/new/two-person-photo.jpg">
+									<p class="two-card-content-person-status">已核查</p>
+								</div>
+								<div class="two-card-content-person-right">
+									<div class="two-card-content-person-name">
+										<p>李四（湖北武汉）</p>
+									</div>
+									<div class="two-card-content-person-info">
+										<div>
+											<img src="images/new/two-person-type.png">
+											<p>上访</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-address.png">
+											<p>高密市河崖镇</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-time.png">
+											<p>2018-03-13 09:15</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-card.png">
+											<p>420701197608110293</p>
+										</div>
+									</div>
+									<div class="two-card-content-person-sum">
+										<p>今日累计：5次</p>
+									</div>
+									<img class="two-card-content-person-icon" src="images/new/two-person.png">
+								</div>
+							</li>
+							<li>
+								<div class="two-card-content-person-left">
+									<img class="two-card-content-person-photo" src="images/new/two-person-photo.jpg">
+									<p class="two-card-content-person-status">已核查</p>
+								</div>
+								<div class="two-card-content-person-right">
+									<div class="two-card-content-person-name">
+										<p>李四（湖北武汉）</p>
+									</div>
+									<div class="two-card-content-person-info">
+										<div>
+											<img src="images/new/two-person-type.png">
+											<p>上访</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-address.png">
+											<p>高密市河崖镇</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-time.png">
+											<p>2018-03-13 09:15</p>
+										</div>
+										<div>
+											<img src="images/new/two-person-card.png">
+											<p>420701197608110293</p>
+										</div>
+									</div>
+									<div class="two-card-content-person-sum">
+										<p>今日累计：5次</p>
+									</div>
+									<img class="two-card-content-person-icon" src="images/new/two-person.png">
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--<img id="two-card-next" src="images/new/two-right-arrow.png">-->
+				</div>
+				<!--<ul class="two-bottom-ul">
+					<li class="select">
+					</li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>-->
+			</div>
+			<div class="step-three">
+				<div class="three-input-div">
+					<input type="text" id="three-search-box">
+				</div>
+				<div class="three-button-div">
+					<button>搜索态势</button>
+				</div>
+
+			</div>
+		</div>
+		<div class="center">
+			<div class="title-div">
+				<span class="title-span">
+					<label>今日数据流量</label>
+				</span>
+			</div>
+			<div class="m_top">
+				<div class="top-left">
+					<div class="m_top-top-left-div">
+						<p>已核查人数</p>
+						<span>652</span>
+					</div>
+					<div class="m_top-top-left-div">
+						<p>已核查车辆</p>
+						<span>208</span>
+					</div>
+				</div>
+				<div class="top-right">
+					<div class="list-div">
+						<div class="prev"></div>
+						<div class="list-hiden">
+							<img src="images/saomiao.png" class="saomiao" />
+							<ul class="m_list">
+								<!--<li>
+										<i class="iconfont right-i">&#xe6a1;</i>
+										<div class="img-border"><img src="images/9.png" /></div>
+										<p><i class="iconfont">&#xe810;</i><span>07:15</span></p>
+										<p><i class="iconfont">&#xe604;</i><span>三眼桥地铁站</span></p>
+										<a href="#">查看详情</a>
+									</li>
+									<li>
+										<i class="iconfont right-i">&#xe697;</i>
+										<div class="img-border"><img src="images/5.png" /></div>
+										<p><i class="iconfont">&#xe810;</i><span>07:56</span></p>
+										<p><i class="iconfont">&#xe604;</i><span>文物监管市场</span></p>
+										<a href="#">查看详情</a>
+									</li>
+									<li>
+										<i class="iconfont right-i">&#xe62e;</i>
+										<div class="img-border"><img src="images/12.png" /></div>
+										<p><i class="iconfont">&#xe810;</i><span>08:08</span></p>
+										<p><i class="iconfont">&#xe604;</i><span>安友花园</span></p>
+										<a href="#">查看详情</a>
+									</li>
+									<li>
+										<i class="iconfont right-i">&#xe648;</i>
+										<div class="img-border"><img src="images/10.png" /></div>
+										<p><i class="iconfont">&#xe810;</i><span>09:40</span></p>
+										<p><i class="iconfont">&#xe604;</i><span>烟草江汉分局</span></p>
+										<a href="#">查看详情</a>
+									</li>-->
+								<!--<li>
+										<i class="iconfont right-i">&#xe697;</i>
+										<div class="img-border"><img src="images/a1.jpg" /></div>
+										<p><i class="iconfont">&#xe810;</i><span>09:15</span></p>
+										<p><i class="iconfont">&#xe604;</i><span>汉口火车站</span></p>
+										<a href="#">查看详情</a>
+									</li>
+									<li>
+										<i class="iconfont right-i">&#xe697;</i>
+										<div class="img-border"><img src="images/a1.jpg" /></div>
+										<p><i class="iconfont">&#xe810;</i><span>09:15</span></p>
+										<p><i class="iconfont">&#xe604;</i><span>汉口火车站</span></p>
+										<a href="#">查看详情</a>
+									</li>-->
+							</ul>
+						</div>
+						<div class="next"></div>
+					</div>
+				</div>
+			</div>
+			<div class="m_bottom">
+				<!--左上角 人脸-->
+				<div class="m-left left-top">
+					<img src="images/rotate.png" class="rotate" />
+					<i class="iconfont">&#xe697;</i>
+					<span class="munber" id="wcrl">0</span>
+					<p class="total-p" id="wcrlsbs">0</p>
+					<!--<img src="images/a3.jpg" class="rlsb"/>-->
+
+				</div>
+				<div class="m-line">
+					<img src="images/left-top.png" class="left-line" />
+					<img src="images/bling.png" class="m-l bling" />
+					<img src="images/bling.png" class="m-r bling" />
+				</div>
+				<!--左中 wifi预警-->
+				<div class="m-left left-center">
+					<img src="images/rotate.png" class="rotate" />
+					<i class="iconfont">&#xe617;</i>
+					<span class="munber" id="wcwifi">0</span>
+					<p class="total-p" id="wcwifisbs">0</p>
+					<!--<div class="address">MAC:add119djae3b</div>-->
+				</div>
+				<div class="m-line">
+					<img src="images/left-center.png" class="center-line" />
+					<img src="images/bling.png" class="center-l bling" />
+					<img src="images/bling.png" class="center-r bling" />
+				</div>
+
+				<!--左下 车辆卡口-->
+				<div class="m-left left-bottom">
+					<img src="images/rotate.png" class="rotate" />
+					<i class="iconfont car-id">&#xe63b;</i>
+					<span class="munber" id="wcclkk">0 </span>
+					<p class="total-p" id="wcclkksbs">0</p>
+				</div>
+				<div class="m-line">
+					<img src="images/left-bottom.png" class="bottom-line" />
+					<img src="images/bling.png" class="bottom-l bling" />
+					<img src="images/bling.png" class="bottom-r bling" />
+				</div>
+
+				<!--右上 酒店住宿 替换成核查核录-->
+				<div class="m-left right-top">
+					<img src="images/rotate.png" class="rotate" />
+					<i class="iconfont">&#xe648;</i>
+					<span class="munber" id="wcjd">0</span>
+					<p class="total-p" id="wcjdsbs">0</p>
+					<!--<div class="address">421006987542145214</div>-->
+				</div>
+				<div class="m-line">
+					<img src="images/right-top.png" class="right-line" />
+					<img src="images/bling.png" class="r-l bling" />
+					<img src="images/bling.png" class="r-r bling" />
+				</div>
+				<!--右中 网吧上网 替换成人证检验闸机-->
+				<div class="m-left right-center">
+					<img src="images/rotate.png" class="rotate" />
+					<i class="iconfont">&#xe6a1;</i>
+					<span class="munber" id="wcwb">0</span>
+					<p class="total-p" id="wcwbsbs">0</p>
+				</div>
+				<div class="m-line">
+					<img src="images/right-center.png" class="right-c-line" />
+					<img src="images/bling.png" class="r-c-l bling" />
+					<img src="images/bling.png" class="r-c-r bling" />
+				</div>
+				<!--右下 LBS手机预警 替换成628-->
+				<div class="m-left right-bottom">
+					<img src="images/rotate.png" class="rotate" />
+					<i class="iconfont">&#xe62e;</i>
+					<span class="munber" id="wcsjdw">0</span>
+					<p class="total-p" id="wcsjdwsbs">0</p>
+				</div>
+				<div class="m-line">
+					<img src="images/right-bottom.png" class="right-b-line" />
+					<img src="images/bling.png" class="r-b-l bling" />
+					<img src="images/bling.png" class="r-b-r bling" />
+				</div>
+				<!--光影-->
+
+				<div class="guanggan">
+					<img src="images/guanggan.png" />
+					<div class="stars">
+						<div class="star s" style="top: 150px;left: 230px;"></div>
+						<div class="star s1" style="top: 90px;left: 55px;"></div>
+						<div class="star s4" style="top: 190px;left: 255px;"></div>
+						<div class="star s5" style="top: 190px;left: 130px;"></div>
+						<div class="star s6" style="top: 70px;left: 25px;"></div>
+						<div class="star s9" style="top: 70px;left: 175px;"></div>
+						<div class="star s10" style="top: 70px;left: 277px;"></div>
+						<div class="star s2" style="top: 190px;left: 97px;"></div>
+
+					</div>
+					<div class="ip-address">
+						<span class="span1 num1">1</span>
+						<span class="span2 num2">0</span>
+						<span class="span3 num3">1</span>
+						<span class="span4 num4">1</span>
+						<span class="span5 num5">0</span>
+						<span class="span1 num-span1">1</span>
+						<span class="span2 num-span2">0</span>
+						<span class="span3 num-span3">0</span>
+						<span class="span4 num-span4">1</span>
+						<span class="span5 num-span5">0</span>
+					</div>
+					<!--<div class="data-mutually">
+							<img src="images/a3.jpg" class="data"/>
+						</div>-->
+				</div>
+				<!--中间部分-->
+				<div class="m_c_div">
+					<img src="images/wai.png" class="m-wai" style="width: 85%;" />
+					<img src="images/nei.png" class="nei" style="width: 66%;" />
+					<div class="brain-div">
+						<img src="images/brain.png" class="brain" />
+						<div class="guangquan"></div>
+						<!--<img src="images/gq.png" class="guangquan" />-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="step-four">
+				<div class="four-title-div">
+					<span class="title-span">
+						<label>检查站领导</label>
+					</span>
+				</div>
+				<div class="four-div">
+					<div class="four-left">
+						<ul id="four-left-ul">
+							<li>
+								<div class="four-left-selected">青银高速检查站站长：林一平（13928929981）</div>
+							</li>
+							<li>
+								<div class="four-left-unselected">青银高速检查站站长：林一平（13928929981）</div>
+							</li>
+							<li>
+								<div class="four-left-unselected">河崖卡点站长：林国江（13228929981）</div>
+							</li>
+						</ul>
+					</div>
+					<div class="four-right">
+						<ul id="four-right-ul">
+							<li class="select">
+							</li>
+							<li>
+							</li>
+							<li>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="step-five">
+				<div class="five-title-div">
+					<span class="title-span">
+						<label>检查站</label>
+					</span>
+				</div>
+				<ul class="five-top-ul">
+					<li class="select">视频会议</li>
+					<li>人脸卡口</li>
+					<li>4G回传</li>
+					<li>无人机</li>
+				</ul>
+				<div class="five-center-div">
+					<img id="five-center-prev" src="images/new/two-left-arrow.png">
+					<ul id="five-center-ul">
+						<li>
+							<img class="five-center-photo" src="images/new/five-photo.png">
+						</li>
+					</ul>
+					<img id="five-center-next" src="images/new/two-right-arrow.png">
+				</div>
+				<ul class="five-bottom-ul">
+					<li class="select">
+					</li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+
+			</div>
+
+			<div class="step-six">
+				<label class="title-lable six-title">实时查控</label>
+				<ul class="six-ul">
+					<li>
+						<img src="images/new/six-photo.png" alt="实时监控">
+						<p>火车站检查站</p>
+					</li>
+					<li>
+						<img src="images/new/six-photo.png" alt="实时监控">
+						<p>火车站检查站</p>
+					</li>
+					<li>
+						<img src="images/new/six-photo.png" alt="实时监控">
+						<p>火车站检查站</p>
+					</li>
+					<li>
+						<img src="images/new/six-photo.png" alt="实时监控">
+						<p>火车站检查站</p>
+					</li>
+					<li>
+						<img src="images/new/six-photo.png" alt="实时监控">
+						<p>火车站检查站</p>
+					</li>
+					<li>
+						<img src="images/new/six-photo.png" alt="实时监控">
+						<p>火车站检查站</p>
+					</li>
+				</ul>
+			</div>
+
+			<div class="step-seven">
+				<button id="meeting-button">视频会议</button>
+			</div>
+			<div class="bottom">
+				<div class="bottom-div">
+					<div class="bottom-left">
+						<div class="data-div hot">
+							<!-- <div class="renliu">
+								<img src="images/people.png" />
+								<span>人流总数</span>
+								<div class="num-div">241880</div>
+							</div> -->
+
+							<div class="bottom-center">
+								<div class="div-info">
+									<!--<div class="div-list">
+										<div class="midu-div" >
+											<img src="images/youxian.png" class="info-img" data-id="1" />
+											<div class="box" id="progressBox1"></div>
+											<span class="name-span">江汉江汉关区域</span>
+											<img src="images/youxian-hover.png" class="img-hover"/>
+											
+										</div>
+										
+									</div>-->
+									<div class="div-list">
+										<div class="midu-div">
+											<img src="images/new/people-stream-hcz.png" class="info-img mark-img" data-id="1" />
+											<div class="box mark-img" id="progressBox1" data-id="1"></div>
+											<span class="name-span">火车站</span>
+											<img src="images/new/people-stream-hcz2.png" class="img-hover ih1" />
+										</div>
+										<div class="bottom-density blue">
+											<div class="bottom-density-num">5230</div>
+											<ul>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+										<div class="bottom-density red">
+											<div class="bottom-density-num">230</div>
+											<ul>
+												<li></li>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+									</div>
+									<div class="div-list">
+										<div class="midu-div">
+											<img src="images/new/people-stream-qcz.png" class="info-img mark-img" data-id="2" />
+											<div class="box mark-img" id="progressBox2" data-id="2"></div>
+											<span class="name-span">汽车站</span>
+											<img src="images/new/people-stream-qcz2.png" class="img-hover ih2" />
+										</div>
+										<div class="bottom-density blue">
+											<div class="bottom-density-num">440</div>
+											<ul>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+										<div class="bottom-density red">
+											<div class="bottom-density-num">180</div>
+											<ul>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+									</div>
+									<div class="div-list">
+										<div class="midu-div">
+											<img src="images/new/people-stream-qygs.png" class="info-img mark-img" data-id="3" />
+											<div class="box mark-img" id="progressBox3" data-id="3"></div>
+											<span class="name-span">青银高速</span>
+											<img src="images/new/people-stream-qygs2.png" class="img-hover ih3" />
+										</div>
+										<div class="bottom-density blue">
+											<div class="bottom-density-num">3003</div>
+											<ul>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+										<div class="bottom-density red">
+											<div class="bottom-density-num">30</div>
+											<ul>
+												<li></li>
+											</ul>
+										</div>
+									</div>
+									<div class="div-list">
+										<div class="midu-div">
+											<img src="images/new/people-stream-ljy.png" class="info-img mark-img" data-id="4" />
+											<div class="box mark-img" id="progressBox4" data-id="4"></div>
+											<span class="name-span">李家营</span>
+											<img src="images/new/people-stream-ljy2.png" class="img-hover ih4" />
+										</div>
+
+										<div class="bottom-density blue">
+											<div class="bottom-density-num">2730</div>
+											<ul>
+												<li></li>
+												<li></li>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+										<div class="bottom-density red">
+											<div class="bottom-density-num">20</div>
+											<ul>
+												<li></li>
+											</ul>
+										</div>
+									</div>
+									<div class="div-list">
+										<div class="midu-div">
+											<img src="images/new/people-stream-hy.png" class="info-img mark-img" data-id="5" />
+											<div class="box mark-img" id="progressBox5" data-id="5"></div>
+											<span class="name-span">河涯</span>
+											<img src="images/new/people-stream-hy2.png" class="img-hover ih5" />
+										</div>
+
+										<div class="bottom-density blue">
+											<div class="bottom-density-num">2603</div>
+											<ul>
+												<li></li>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+										<div class="bottom-density red">
+											<div class="bottom-density-num">14</div>
+											<ul>
+												<li></li>
+											</ul>
+										</div>
+									</div>
+									<div class="div-list">
+										<div class="midu-div">
+											<img src="images//new/people-stream-jz.png" class="info-img mark-img" data-id="6" />
+											<div class="box mark-img" id="progressBox6" data-id="6"></div>
+											<span class="name-span">姜庄</span>
+											<img src="images//new/people-stream-jz2.png" class="img-hover ih6" />
+										</div>
+
+										<div class="bottom-density blue">
+											<div class="bottom-density-num">2200</div>
+											<ul>
+												<li></li>
+												<li></li>
+											</ul>
+										</div>
+										<div class="bottom-density red">
+											<div class="bottom-density-num">14</div>
+											<ul>
+												<li></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="data-div important">
+							<div class="jiance-div">
+								<div id="jiance"></div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="bottom-right">
+						<div class="b-right-div selected-div">
+							<div class="selectd-img">
+								<img src="images/b-selectd.png" class="selectd-border" />
+								<img src="images/b-selectd-border.png" class="border-img" />
+							</div>
+							<span class="top-span">热门场所人流密度</span>
+						</div>
+						<div class="b-right-div left-div">
+							<div class="selectd-img">
+								<img src="images/b-border.png" class="selectd-border" />
+							</div>
+							<span>重点部位人流预警监测</span>
+						</div>
+
+					</div>
+				</div>
+				<div class="tankuang" id="tankuang1">
+					<img src="images/tankuang.png" class="tankuang-img" />
+					<div class="tankuang-div">
+						<span class="tankuang-title">江汉江汉关区域</span>
+						<div>
+							<p class="newsIntro"></p>
+						</div>
+						<div class="tk-div">
+							<img src="" class="tankuangdepImg" />
+							<!--<img src="" class="tankuangimg"/>-->
+							<div>当前人数：
+								<span class="people-num"></span>
+								</label>
+							</div>
+							<div>所属辖区：
+								<span class="xiaqu">江汉公安分局佳丽警务站辖区</span>
+							</div>
+						</div>
+					</div>
+					<img src="images/close.png" class="close" />
+				</div>
+				<!--<div class="tankuang" id="tankuang2">
+					<img src="images/tankuang.png" class="tankuang-img"/>
+					<div class="tankuang-div">
+						<span class="tankuang-title">武汉有线电视台</span>
+						<div>武汉电视台[1]  1983年试播，1984年元旦使用19频道正式播出，1993年8月9日启用38频道开办第二套节目，1996年4月1日开办有线新闻、英语、文体频道，1998年又开通两套图文电视。</div>
+						<img src="images/whtv.jpg" />
+						<div>当前人数：<span class="people-num"></span></label></div>
+						<div>所属辖区：<span>江汉区</span></div>
+					</div>
+					<img src="images/close.png" class="close" />
+				</div>
+				<div class="tankuang" id="tankuang3">
+					<img src="images/tankuang.png" class="tankuang-img"/>
+					<div class="tankuang-div">
+						<span class="tankuang-title">武汉有线电视台</span>
+						<div>武汉电视台[1]  1983年试播，1984年元旦使用19频道正式播出，1993年8月9日启用38频道开办第二套节目，1996年4月1日开办有线新闻、英语、文体频道，1998年又开通两套图文电视。</div>
+						<img src="images/whtv.jpg" />
+						<div>当前人数：<span class="people-num"></span></label></div>
+						<div>所属辖区：<span>江汉区</span></div>
+					</div>
+					<img src="images/close.png" class="close" />
+				</div>
+				<div class="tankuang" id="tankuang4">
+					<img src="images/tankuang.png" class="tankuang-img"/>
+					<div class="tankuang-div">
+						<span class="tankuang-title">武汉有线电视台</span>
+						<div>武汉电视台[1]  1983年试播，1984年元旦使用19频道正式播出，1993年8月9日启用38频道开办第二套节目，1996年4月1日开办有线新闻、英语、文体频道，1998年又开通两套图文电视。</div>
+						<img src="images/whtv.jpg" />
+						<div>当前人数：<span class="people-num"></span></label></div>
+						<div>所属辖区：<span>江汉区</span></div>
+					</div>
+					<img src="images/close.png" class="close" />
+				</div>-->
+
+			</div>
+			<!--点击交通信息-->
+
+			<div class="jtxx">
+				<div class="jt-bj">
+					<img src="images/close_tk.png" class="close-jt" />
+					<span class="ssjt">交通实时信息</span>
+					<div class="map-div">
+						<img src="images/map.png" class="map map-info" />
+					</div>
+					<ul class="road-ul">
+						<li value="1">拥堵路段:
+							<span class="yd-span">0</span>
+						</li>
+						<li value="2">缓行路段:
+							<span class="hx-span">0</span>
+						</li>
+						<li value="3">畅通路段:
+							<span class="ct-span">0</span>
+						</li>
+					</ul>
+					<!--<select class="jt-select">
+							<option value="1" selected="selected">全部</option>
+							<option value="2">拥堵</option>
+							<option value="3">缓行</option>
+							<option value="4">畅通</option>
+						</select>-->
+					<div class="info-div">
+						<ul>
+							<!--<li>
+									<div class="time">17:00</div>
+									<div class="road-name"><span class="road-from">京汉大道</span>-<span class="road-to">中山大道</span></div>
+									<div class="road-static">拥堵</div>
+								</li>-->
+							<!--<li>
+									<div class="time">17:00</div>
+									<div class="road-name"><span>京汉大道</span>-<span>中山大道</span></div>
+									<div>拥堵</div>
+								</li>
+								<li>
+									<div class="time">17:00</div>
+									<div class="road-name"><span>京汉大道</span>-<span>中山大道</span></div>
+									<div>拥堵</div>
+								</li>
+								<li>
+									<div class="time">17:00</div>
+									<div class="road-name"><span>京汉大道</span>-<span>中山大道</span></div>
+									<div>拥堵</div>
+								</li>
+								<li>
+									<div class="time">17:00</div>
+									<div class="road-name"><span>京汉大道</span>-<span>中山大道</span></div>
+									<div>拥堵</div>
+								</li>
+								<li>
+									<div class="time">17:00</div>
+									<div class="road-name"><span>京汉大道</span>-<span>中山大道1</span></div>
+									<div>拥堵</div>
+								</li>-->
+						</ul>
+						<ul></ul>
+						<ul></ul>
+					</div>
+				</div>
+
+				<div class="zhezhao"></div>
+			</div>
+			<!--点击左上角 人脸-->
+			<div class="jtxx rlsb_alert">
+				<div class="jt-bj1">
+
+					<img src="images/close_tk.png" class="close-jt" />
+					<span class="ssjt">人脸</span>
+					<!--<div class="jqGrid_wrapper">
+                            <table id="table_list_1"></table>
+                            <div id="pager_list_1"></div>
+                        </div>-->
+					<div class="jqGrid_wrapper">
+						<table id="renlian"></table>
+						<div id="renlianPage"></div>
+						<!--<div class="" style="float:right;">
+							<ul class="pagination" id="renlianPage"></ul>
+						</div>-->
+					</div>
+				</div>
+
+				<div class="zhezhao"></div>
+			</div>
+
+			<!--点击左中 wifi预警-->
+			<div class="jtxx wifi_alert">
+				<div class="jt-bj1">
+
+					<img src="images/close_tk.png" class="close-jt" />
+					<span class="ssjt">wifi预警</span>
+					<div class="jqGrid_wrapper">
+						<table id="wifiyujing"></table>
+						<div id="wifiyujingPage"></div>
+					</div>
+
+					<!--<div class="" style="float:right;">
+						<ul class="pagination" id="wifiyujingPage"></ul>
+					</div>-->
+				</div>
+				<div class="zhezhao"></div>
+			</div>
+
+			<!--点击右上 酒店住宿-->
+			<div class="jtxx hotel_alert">
+				<div class="jt-bj1">
+
+					<img src="images/close_tk.png" class="close-jt" />
+					<span class="ssjt">酒店住宿</span>
+					<!--<table id="jiudianzhushu"></table>
+					<div id="jiudianzhushuPage"></div>-->
+					<div class="jqGrid_wrapper">
+						<table id="jiudianzhushu"></table>
+						<div id="jiudianzhushuPage"></div>
+					</div>
+					<!--<div class="" style="float:right;">
+						<ul class="pagination" id="jiudianzhushuPage"></ul>
+					</div>-->
+				</div>
+
+				<div class="zhezhao"></div>
+			</div>
+
+			<div class="jtxx internet-bar_alert">
+				<div class="jt-bj1">
+
+					<img src="images/close_tk.png" class="close-jt" />
+					<span class="ssjt">网吧</span>
+					<div class="jqGrid_wrapper">
+						<!--<table id="wangba"></table>
+					<div id="wangbaPage"></div>-->
+						<div class="jqGrid_wrapper">
+							<table id="wangba"></table>
+							<div id="wangbaPage"></div>
+						</div>
+						<!--<div class="" style="float:right;">
+						<ul class="pagination" id="wangbaPage"></ul>
+					</div>-->
+					</div>
+				</div>
+				<div class="zhezhao"></div>
+			</div>
+
+			<div class="jtxx car_alert">
+				<div class="jt-bj1">
+
+					<img src="images/close_tk.png" class="close-jt" />
+					<span class="ssjt">车辆卡口</span>
+					<div class="jqGrid_wrapper">
+						<table id="cheliangkakou"></table>
+						<div id="cheliangkakouPage"></div>
+					</div>
+
+					<!--<div class="" style="float:right;">
+						<ul class="pagination" id="cheliangkakouPage"></ul>
+					</div>-->
+				</div>
+				<div class="zhezhao"></div>
+			</div>
+
+			<div class="jtxx dw-qu">
+				<div class="fw-bj">
+					<img src="images/close_tk.png" class="close-qb" />
+					<img src="" class="dw-img">
+				</div>
+
+				<div class="zhezhao"></div>
+			</div>
+
+			<div class="jqxx">
+				<div class="jt-bj">
+					<img src="images/close_tk.png" class="close-jq" />
+					<span class="ssjt">交通实时信息</span>
+					<div class="jq-div">
+						<div>标题</div>
+						<p>内容</p>
+					</div>
+				</div>
+				<div class="zhezhao"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/lib/sockjs-0.3.js"></script>
+		<script type="text/javascript" src="js/lib/stomp.js"></script>
+		<script type="text/javascript" src="js/lib/jquery.bxslider.min.js"></script>
+		<script src="js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/dateUtils.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/echarts.js"></script>
+		<script type="text/javascript" src="js/echarts-liquidfill.js"></script>
+		<!--<script type="text/javascript" src="js/center.js"></script>
+		<script type="text/javascript" src="js/taishi.js"></script>
+		<script type="text/javascript" src="js/jiance.js"></script>
+		<script type="text/javascript" src="js/progress.js"></script>
+		<script type="text/javascript" src="js/jiaohu.js"></script>-->
+		<!--与cs端的交互-->
+		<script type="text/javascript" src="js/index.js"></script>
+		<script src="js/readConfig.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/peity/jquery.peity.min.js"></script>
+		<script type="text/javascript" src="js/jqgrid/i18n/grid.locale-cn.js"></script>
+		<script type="text/javascript" src="js/jqgrid/jquery.jqGrid.min.js"></script>
+		<!--<script src="js/renlian.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/wifiyujing.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jiudianzhushu.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/wangba.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cheliangkakou.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			//$(function(){
+			var radius = 110;
+			var d = 250;
+			var dtr = Math.PI / 180;
+			var mcList = [];
+			var lasta = 1;
+			var lastb = 1;
+			var distr = true;
+			var tspeed = 8;
+			var size = 250;
+			var mouseX = 20;
+			var mouseY = 15;
+			var howElliptical = 1;
+			var aA = null;
+			var oDiv = null;
+
+			var yzDings;
+			setTimeout(function () {
+				var i = 0;
+				var oTag = null;
+
+				oDiv = document.getElementById('tagscloud');
+				aA = oDiv.getElementsByTagName('a');
+				for (i = 0; i < aA.length; i++) {
+					oTag = {};
+					//		aA[i].onmouseover = (function (obj) {
+					//			return function () {
+					//				obj.on = true;
+					//				this.style.zIndex = 9999;
+					//				//this.style.color = '#fff';
+					//				this.style.padding = '5px -15px';
+					//				this.style.filter = "alpha(opacity=100)";
+					//				this.style.opacity = 1;
+					//			}
+					//		})(oTag)
+					//		aA[i].onmouseout = (function (obj) {
+					//			return function () {
+					//				obj.on = false;
+					//				this.style.zIndex = obj.zIndex;
+					//				//this.style.color = '#fff';
+					//				this.style.padding = '5px';
+					//				this.style.filter = "alpha(opacity=" + 100 * obj.alpha + ")";
+					//				this.style.opacity = obj.alpha;
+					//				this.style.zIndex = obj.zIndex;
+					//			}
+					//		})(oTag)
+					oTag.offsetWidth = aA[i].offsetWidth;
+					oTag.offsetHeight = aA[i].offsetHeight;
+					mcList.push(oTag);
+				}
+				sineCosine(0, 0, 0);
+				positionAll();
+				(function () {
+					update();
+					yzDings = setTimeout(arguments.callee, 40);
+				})();
+			}, 500);
+			$("#tagscloud").on('mouseover', 'a', function () {
+				clearTimeout(yzDings);
+			})
+
+			$("#tagscloud").on('mouseout', 'a', function () {
+				(function () {
+					update();
+					yzDings = setTimeout(arguments.callee, 40);
+				})();
+			})
+
+			function update() {
+				var a, b, c = 0;
+				a = (Math.min(Math.max(-mouseY, -size), size) / radius) * tspeed;
+				b = (-Math.min(Math.max(-mouseX, -size), size) / radius) * tspeed;
+				lasta = a;
+				lastb = b;
+				if (Math.abs(a) <= 0.01 && Math.abs(b) <= 0.01) {
+					return;
+				}
+				sineCosine(a, b, c);
+				for (var i = 0; i < mcList.length; i++) {
+					if (mcList[i].on) {
+						continue;
+					}
+					var rx1 = mcList[i].cx;
+					var ry1 = mcList[i].cy * ca + mcList[i].cz * (-sa);
+					var rz1 = mcList[i].cy * sa + mcList[i].cz * ca;
+
+					var rx2 = rx1 * cb + rz1 * sb;
+					var ry2 = ry1;
+					var rz2 = rx1 * (-sb) + rz1 * cb;
+
+					var rx3 = rx2 * cc + ry2 * (-sc);
+					var ry3 = rx2 * sc + ry2 * cc;
+					var rz3 = rz2;
+
+					mcList[i].cx = rx3;
+					mcList[i].cy = ry3;
+					mcList[i].cz = rz3;
+
+					per = d / (d + rz3);
+
+					mcList[i].x = (howElliptical * rx3 * per) - (howElliptical * 2);
+					mcList[i].y = ry3 * per;
+					mcList[i].scale = per;
+					var alpha = per;
+					alpha = (alpha - 0.6) * (10 / 6);
+					mcList[i].alpha = alpha * alpha * alpha - 0.2;
+					mcList[i].zIndex = Math.ceil(100 - Math.floor(mcList[i].cz));
+				}
+				doPosition();
+			}
+
+			function positionAll() {
+				var phi = 0;
+				var theta = 0;
+				var max = mcList.length;
+				for (var i = 0; i < max; i++) {
+					if (distr) {
+						phi = Math.acos(-1 + (2 * (i + 1) - 1) / max);
+						theta = Math.sqrt(max * Math.PI) * phi;
+					} else {
+						phi = Math.random() * (Math.PI);
+						theta = Math.random() * (2 * Math.PI);
+					}
+					//坐标变换
+					mcList[i].cx = radius * Math.cos(theta) * Math.sin(phi);
+					mcList[i].cy = radius * Math.sin(theta) * Math.sin(phi);
+					mcList[i].cz = radius * Math.cos(phi);
+
+					aA[i].style.left = mcList[i].cx + oDiv.offsetWidth / 2 - mcList[i].offsetWidth / 2 + 'px';
+					aA[i].style.top = mcList[i].cy + oDiv.offsetHeight / 2 - mcList[i].offsetHeight / 2 + 'px';
+				}
+			}
+
+			function doPosition() {
+				var l = oDiv.offsetWidth / 2;
+				var t = oDiv.offsetHeight;
+				for (var i = 0; i < mcList.length; i++) {
+					if (mcList[i].on) {
+						continue;
+					}
+					var aAs = aA[i].style;
+					if (mcList[i].alpha > 0.1) {
+						if (aAs.display != '')
+							aAs.display = '';
+					} else {
+						if (aAs.display != 'none')
+							aAs.display = 'none';
+						continue;
+					}
+					aAs.left = mcList[i].cx + l - mcList[i].offsetWidth / 2 + 'px';
+					aAs.top = mcList[i].cy + t - mcList[i].offsetHeight / 5 + 'px';
+					aAs.fontSize = Math.ceil(12 * mcList[i].scale / 2) + 12 + 'px';
+					aAs.filter = "progid:DXImageTransform.Microsoft.Alpha(opacity=" + 100 * mcList[i].alpha + ")";
+					aAs.filter = "alpha(opacity=" + 100 * mcList[i].alpha + ")";
+					aAs.zIndex = mcList[i].zIndex;
+					aAs.opacity = mcList[i].alpha;
+				}
+			}
+
+			function sineCosine(a, b, c) {
+				sa = Math.sin(a * dtr);
+				ca = Math.cos(a * dtr);
+				sb = Math.sin(b * dtr);
+				cb = Math.cos(b * dtr);
+				sc = Math.sin(c * dtr);
+				cc = Math.cos(c * dtr);
+			}
+		</script>
+
+</div>
+</body>
+
+</html>
