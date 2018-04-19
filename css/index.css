@@ -1,15 +1,21 @@
 ﻿body{
+    width: 1920px;
+    height: 1080px;
+    overflow: auto;
+    position: relative;
 	background-color: #000615;
     background: url(../images/bg2.jpg) no-repeat;
-    background-size: 100% 100%;
+    /*background-size: 100% 100%;*/
 /*background-size: cover;*/
+}
+a {
+    cursor: pointer;
 }
 .pointer {
     cursor: pointer;
 }
 .content{
 	height: 100%;
-	min-width: 1920px;
 	/*position: relative;
 	width: 1920px;
 	height: 1080px;
@@ -18,9 +24,7 @@
 	background-color: #000615;*/
 }
 .top{
-    width: 100%;
-    height: 11%;
-    float: left;
+    height: 118px;
 }
 /* .zhiban{
 	font-size: 24px;
@@ -134,9 +138,9 @@
 /*左边*/
 
 .left{
-    width: 20%;
-    height: 89%;
-    margin-left: 1.5%;
+    width: 390px;
+    height: 960px;
+    margin-left: 28px;
     float: left;
 }
 
@@ -144,7 +148,6 @@
 	width: 100%;
     height: 48%;
     float: left;
-    margin-top: 0.4%;
 }
 .ts-name-div{
     height: 6%;
@@ -305,13 +308,13 @@
 .step-two{
 	width: 100%;
     height: 32%;
-    margin-top: 6%;
+    margin-top: 24px;
     float: left;
 }
 .two-card-div{
 	width: 100%;
     height: 58%;
-    margin-top: 8%;
+    margin-top: 12%;
     float: left;
 }
 
@@ -443,7 +446,7 @@
     position: absolute;
     top: 10%;
     right: 2%;
-    border: 00f0ff 1px;
+    border: #00f0ff 1px;
 }
 
 .two-bottom-ul{
@@ -467,39 +470,35 @@
 
 
 .step-three{
-	width: 100%;
-    height: 32%;
-    margin-top: 5%;
-    float: left;
-}
-.three-input-div{
-	height: 25%;
-	width: 100%;
+    width: 367px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    text-align: center;
+    z-index: 9;
 }
 .three-input-div input{
 	height: 32px;
+    line-height: 30px;
     width: 250px;
-    margin-top: 10%;
-	margin-left: 10%;   
-	 border: 0px;
-    background-color: transparent;
-    background-image: url(../images/new/three-search-box.png);
+    margin-top: 15px;
+    padding: 0 10px;
+    border: solid 1px #004773;
+    border-radius: 6px;
+    outline: none;
+    background: transparent url(../images/new/three-search-box.png) no-repeat 50% 50%;
 }
-
 .three-button-div{
-	height: 25%;
-	width: 100%;
-}
-.three-button-div button{
-	height: 35px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
     width: 95px;
-    margin-top: 5%;
-    margin-left: 30%;
+    margin-top: 15px;
     font-size: 14px;
-	color: white;
-	background-color: transparent;
+    color: white;
     border: 0px;
-    background-image: url(../images/new/three-search-button.png);
+    background: transparent url(../images/new/three-search-button.png) no-repeat;
+    cursor: pointer;
 }
 
 
@@ -620,25 +619,23 @@
     width: 53%;
     height: 76%;
     float: left;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 0 20px 0 40px;
 }
 .center .title-div{
 	border-top: 1px solid #154362;
-	margin-top: 1%;
+	margin: 10px 20px 0 0;
 }
 .right{
-    float: left;
-    height: 89%;
-    width: 20.5%;
+    float: right;
+    width: 410px;
 }
 
 .bottom{
 	width: 100%;
-	height: 17%;
+	height: 150px;
 	position: absolute;
-	bottom: 0px;
-	left:0px;
+	bottom: 15px;
+	left: 0px;
 }
 .bottom-div{
     width: 100%;
@@ -681,10 +678,25 @@
 }
 .bottom-right{
     width: 12%;
-    height: 80%;
     float: left;
     margin-top: 2%;
 }
+
+.meeting-button{
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    width: 95px;
+    position: absolute;
+    right: 25px;
+    top: 72px;
+    font-size: 14px;
+    color: white;
+    border: 0;
+    background: transparent url(../images/new/three-search-button.png) no-repeat;
+    cursor: pointer;
+}
+
 .div-info{
 	
 }
@@ -702,6 +714,7 @@
     /*margin-top: 10%;*/
     height: 150px;
     position: relative;
+    overflow: hidden;
 }
 .midu-div .info-img{
 	    height: 190px;
@@ -735,56 +748,64 @@
 }
 /*标题样式*/
 .title-div{
-	width: 100%;
-    height: 30px;
-    line-height: 30px;
-    margin-left: 30px;
+    height: 36px;
+    line-height: 34px;
+    margin-left: 20px;
 	/*border-bottom: 1px solid #154362;*/
 	
 }
 .one-title-div{
 	width: 100%;
-	height: 8%;
-	margin-left: 6%;
 }
 .two-title-div{
 	width: 100%;
-	height: 8%;
-	margin-left: 6%;
 }
 
 .four-title-div{
-    width: 100%;
-    height: 20%;
-    margin-left: 8%;
+
 }
 
 .five-title-div{
-    width: 100%;
-    height: 10%;
-    margin-left: 8%;
+
+}
+.five-title-div .title-span {
+    position: relative;
+    top: -26px;
 }
 
 .five-top-ul{
-    margin-top: 4%;
-    width: 100%;
-    height: 8%;
+    margin-top: 16px;
     font-size: 14px;
     text-align: center;
     list-style-type: none;
-    float: left;
+    white-space: nowrap;
 }
 .five-top-ul li{
-	width: 18%;
-    height: 100%;
+    line-height: 20px;
+	min-width: 48px;
+    padding: 0 8px 4px;
+    margin: 5px 0;
     display: inline-block;
-}
-.five-top-ul li.select{
-	border-bottom-style: solid;
-	border-bottom-color: #28C4F1;
-	border-bottom-width: 2px;
-	color: #28C4F1;
+    position: relative;
+    border-right: dashed 1px #0A496C;
     cursor: pointer;
+}
+.five-top-ul li.active{
+    color: #28C4F1;
+}
+.five-top-ul li.active:after{
+    content: '';
+    width: 40px;
+    height: 2px;
+    background: #28C4F1;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    margin-left: -20px;
+    border-radius: 2px 2px 0 0;
+}
+.five-top-ul li:last-child{
+    border: 0;
 }
 
 
@@ -812,13 +833,13 @@
     margin-right: 4%;
 }
 
-#five-center-ul{
-    width: 76%;
+.five-center-ul{
+    width: 100%;
     height: 100%;
     float: left;
     position: relative;
 }
-#five-center-ul li{
+.five-center-ul li{
     width: 100%;
     height: 100%;
     float: left;
@@ -1043,15 +1064,11 @@
 }
 
 .step-four{
-    width: 100%;
-    height: 16%;
-    margin-top: 0.4%;
+    height: 155px;
 }
 .step-five{
-	width: 100%;
-    height: 32%;
-    float: left;
-    padding-top: 2.6%;
+    margin-top: 30px;
+    height: 300px;
 }
 
 .four-div{
@@ -1059,65 +1076,32 @@
     height: 80%;
 }
 .four-left{
-    width: 84%;
-    height: 100%;
+    width: 339px;
     float: left;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 5%;
+    margin-top: 3%;
 }
-#four-left-ul{
-    height: 100%;
-    width: 100%;
+.four-left-ul{
     overflow: hidden; 
 }
-#four-left-ul li{
-    height: 25%;
-    width: 100%;
+.four-left-ul>li{
+    height: 34px;
+    line-height: 33px;
+    border-bottom: dashed 1px #0A496C;
 }
-
-.four-left-selected{
-	color: #28C4F1;
-	font-size: 14px;
-	border-bottom: #0F5367 1px dotted;
-	background-image: url(../images/new/four-left-selected.png);
+.four-left-ul>li>a{
+    color: white;
+    font-size: 14px;
     padding-left: 5%;
+    display: block;
 }
-.four-left-unselected{
-	color: white;
-	font-size: 14px;
+.four-left-ul>li>a:hover{
+    color: #28C4F1;
+    font-size: 14px;
+    border-bottom: #0F5367 1px dotted;
+    background-image: url(../images/new/four-left-selected.png);
     padding-left: 5%;
-}
-
-#four-right-ul{
-    width: 100%;
-    height: 10%;
-    text-align: center;
-    list-style-type: none;
-    float: left;
-}
-#four-right-ul li{
-    width: 7px;
-    height: 7px;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: inline-block;
-    background-image: url(../images/new/dot-unselected.png);
-}
-#four-right-ul li.select{
-    background-image: url(../images/new/dot-selected.png);
-}
-
-
-
-
-
-
-.four-right{
-	width: 10px;
-	height: 100%;
-	float: left;
-	margin-top: 5%;
 }
 
 .four-bottom li p{
@@ -1665,18 +1649,19 @@
 }
 .top-right{
     width: 78%;
-    padding-left: 5%;
 }
-.list-hiden{
-	width: 88%;
+.top-right .bx-wrapper .bx-controls-direction a {
+    width: 36px;
+    height: 60px;
+    margin-top: -30px;
 }
-.m_list{
-	width: 100%;
+.top-right .bx-wrapper .bx-prev {
+    background: url(../images/left.png) no-repeat;
+}
+.top-right .bx-wrapper .bx-next {
+    background: url(../images/right.png) no-repeat;
 }
 .m_list li {
-    width: 16%;
-    height: 100%;
-    padding-left: 4%;
 }
 .m_bottom{
 	height: 75%;
@@ -2118,3 +2103,24 @@
     cursor: pointer;
 }
 .table>tbody>tr.active>td,.table>tbody>tr.active>th,.table>tbody>tr>td.active,.table>tbody>tr>th.active,.table>tfoot>tr.active>td,.table>tfoot>tr.active>th,.table>tfoot>tr>td.active,.table>tfoot>tr>th.active,.table>thead>tr.active>td,.table>thead>tr.active>th,.table>thead>tr>td.active,.table>thead>tr>th.active{background-color:transparent}
+
+
+.tab-wrap {
+
+}
+.tab-head {
+
+}
+.tab-body {
+
+}
+.tab-body>li {
+    display: none;
+}
+.tab-body>li.on {
+    display: block;
+}
+.five-tab-wrap .tab-body {
+    width: 298px;
+    margin: 0 auto;
+}

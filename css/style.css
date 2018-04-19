@@ -154,19 +154,19 @@ a {
 }
 .list-div{
 	height: 175px;
-	margin-left: 50px;
 	position: relative;
 }
 .list-hiden{
 	overflow: hidden;
     position: absolute;
-    width: 630px;
+    width: 775px;
+	padding: 0 30px;
     height: 175px;
 }
 .m_list{
 	height: 100%;
 	width: 630px;
-  
+
         overflow: hidden;
 }
 .list-div .prev{
@@ -189,13 +189,13 @@ a {
     cursor: pointer;
 }
 .m_list li{
-	    font-size: 14px;
-    width: 104px;
+	font-size: 14px;
+    width: 104px !important;
     height: 170px;
     position: relative;
     float: left;
     top: 23px;
-    padding-left: 22px;
+	margin: 0 15px 0 25px;
 }
 .m_list li p{
 	line-height: 25px;

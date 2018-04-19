@@ -205,3 +205,17 @@
 	width: 23px;
 	height: 40px;
 }
+
+
+.bx-wrapper.bxslider-vertical .bx-controls-direction {
+	display: none;
+}
+.bx-wrapper.bxslider-vertical .bx-pager {
+	bottom: inherit;
+	right: -18px;
+	left: inherit;
+	width: 8px;
+	line-height: 16px;
+	top: 32px;
+	padding-top: 0;
+}
