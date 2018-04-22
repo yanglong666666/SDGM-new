@@ -1578,17 +1578,6 @@ $(function(){
 	});
 
 
-	$('#bxslider2').bxSlider({
-		slideMargin: 20
-	});
-	$('.m_list').bxSlider({
-		maxSlides: 5
-	});
-	$('#bxslider4').bxSlider({
-		mode: 'vertical'
-	}).parents('.bx-wrapper').addClass('bxslider-vertical');
-
-
 
 	$('.tab-head li').on('click','',function(){
 		var $self = $(this);
@@ -1601,4 +1590,188 @@ $(function(){
 			slideMargin: 20,
 		});
 	}).eq(0).click();
-})
+
+
+	$('.bottom-center').on('mouseover','.div-list',function(){
+		var $self = $(this);
+		var index = $self.index();
+		var stationCode = $self.attr('station-code');
+		var $tankuang = $('.tankuang');
+		var num = $self.find('.bottom-density.blue .bottom-density-num').text();
+		var xiaqu = $self.find('.name-span').text();
+		$tankuang.show().css('left', index*160+105);
+		$tankuang.find('.people-num').text(num);
+		$tankuang.find('.xiaqu').text(xiaqu+'公安分局佳丽警务站辖区');
+		$tankuang.find('.tankuang-title').text(xiaqu+'区域');
+
+		var qty = $('.ts-qty-div-div span');
+		$tankuang.find('.tk-number').find('li').eq(0).find('span').text(qty.eq(0).text());
+		$tankuang.find('.tk-number').find('li').eq(1).find('span').text(qty.eq(2).text());
+		$tankuang.find('.tk-number').find('li').eq(2).find('span').text(qty.eq(1).text());
+		$tankuang.find('.tk-number').find('li').eq(3).find('span').text(qty.eq(3).text());
+		$tankuang.find('.tk-number').find('li').eq(4).find('span').text(num);
+		switch(stationCode)
+		{
+			case "0":
+
+				break;
+			case "1":
+				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-qygs2.png');
+				break;
+			case "2":
+				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-ljy2.png');
+				break;
+			case "3":
+				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-hy2.png');
+				break;
+			case "4":
+				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-jz2.png');
+				break;
+			case "5":
+				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-hcz2.png');
+				break;
+			case "6":
+				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-qcz2.png');
+				break;
+			default:
+				break;
+		}
+	});
+	$('.bottom-center').on('click','.div-list',function(){
+		var $self = $(this);
+		var stationCode = $self.attr('station-code');
+		if(stationCode>4) return;
+		location.href = "http://" + location.host + '/?stationCode=' + stationCode
+	});
+
+	function getUrlParam(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+		var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+		if (r != null) return unescape(r[2]); return null; //返回参数值
+	}
+
+	(function(){
+		var stationCode = getUrlParam('stationCode');
+		if(!stationCode) return;
+		var $title = $('.top .title span');
+		var $data = $('.hot .div-list .bottom-density .bottom-density-num,.m_top-top-left-div span');
+		var $zhanzhang = $('.zhiban label').eq(0);
+		var $camera = $('.six-ul li');
+		var $weather = $('.weather-address p');
+		var $twoCardAddr= $('.two-card-content .addr,.two-card-content-info .addr');
+		switch(stationCode)
+		{
+			case "0":
+				$title.text('高密市阵地管控平台');
+				$zhanzhang.text('刘润勤');
+				$camera.each(function(index,item){
+					$(item).find('img').attr('src','images/camera/gaomi/'+ (parseInt(index)+1) +'.jpg');
+				});
+				$camera.eq(0).find('p').text('河崖检查站');
+				$camera.eq(1).find('p').text('姜庄检查站');
+				$camera.eq(2).find('p').text('李家营检查站');
+				$camera.eq(3).find('p').text('青银检查站');
+				$camera.eq(4).find('p').text('火车站检查站');
+				$camera.eq(5).find('p').text('汽车站检查站');
+				$weather.text('山东 高密');
+				$twoCardAddr.eq(0).text('高密市河崖');
+				$twoCardAddr.eq(1).text('高密市青银');
+				$twoCardAddr.eq(2).text('高密市姜庄');
+				$twoCardAddr.eq(2).text('高密市李家营');
+				break;
+			case "1":
+				$title.text('高密市青银高速巡控平台');
+				$zhanzhang.text('林一平');
+				$camera.each(function(index,item){
+					$(item).find('img').attr('src','images/camera/qy/'+ (parseInt(index)+1) +'.jpg');
+				});
+				$camera.find('p').text('青银检查站');
+				$weather.text('山东 青银');
+				$twoCardAddr.text('高密市青银');
+				$data.each(function(){
+					$(this).text(parseInt($(this).text()/4 + 1));
+				});
+				break;
+			case "2":
+				$title.text('高密市李家营高速巡控平台');
+				$zhanzhang.text('林国江');
+				$camera.each(function(index,item){
+					$(item).find('img').attr('src','images/camera/ljy/'+ (parseInt(index)+1) +'.jpg');
+				});
+				$camera.find('p').text('李家营检查站');
+				$weather.text('山东 李家营');
+				$twoCardAddr.text('高密市李家营');
+				$data.each(function(){
+					$(this).text(parseInt($(this).text()/4 + 2));
+				});
+				break;
+			case "3":
+				$title.text('高密市河崖高速巡控平台');
+				$zhanzhang.text('林一平');
+				$camera.each(function(index,item){
+					$(item).find('img').attr('src','../images/camera/hy/'+ (parseInt(index)+1) +'.jpg');
+				});
+				$camera.find('p').text('河崖检查站');
+				$weather.text('山东 河崖');
+				$twoCardAddr.text('高密市河崖');
+				$data.each(function(){
+					$(this).text(parseInt($(this).text()/4 + 3));
+				});
+				break;
+			case "4":
+				$title.text('高密市姜庄高速巡控平台');
+				$zhanzhang.text('林国江');
+				$camera.each(function(index,item){
+					$(item).find('img').attr('src','images/camera/jz/'+ (parseInt(index)+1) +'.jpg');
+				});
+				$camera.find('p').text('姜庄检查站');
+				$weather.text('山东 姜庄');
+				$twoCardAddr.text('高密市姜庄');
+				$data.each(function(){
+					$(this).text(parseInt($(this).text()/4 + 4));
+				});
+				break;
+			default:
+				break;
+		}
+
+		$('.two-card-content>ul').prepend($('.two-card-content>ul>li').eq(stationCode));
+		$('.list-hiden>ul').prepend($('.list-hiden>ul>li').eq(stationCode));
+	}());
+
+	$('.change-station').on('click',function(){
+		var stationCode = getUrlParam('stationCode');
+		var stationCodeNew = '';
+		if(!stationCode || stationCode == "0"){
+			if($(this).hasClass('change-station-left')){
+				stationCodeNew= "4";
+			}else{
+				stationCodeNew= "1";
+			}
+		}else if(stationCode>0&&stationCode<4){
+			if($(this).hasClass('change-station-left')){
+				stationCodeNew = parseInt(stationCode) - 1;
+			}else{
+				stationCodeNew = parseInt(stationCode) + 1;
+			}
+		}else if(stationCode == 4){
+			if($(this).hasClass('change-station-left')){
+				stationCodeNew = "3";
+			}else{
+				stationCodeNew = "0";
+			}
+		}
+		location.href = "http://" + location.host + '/?stationCode=' + stationCodeNew
+	});
+
+
+	$('#bxslider2').bxSlider({
+		slideMargin: 20
+	});
+	$('.m_list').bxSlider({
+		maxSlides: 5
+	});
+	$('#bxslider4').bxSlider({
+		mode: 'vertical'
+	}).parents('.bx-wrapper').addClass('bxslider-vertical');
+});
