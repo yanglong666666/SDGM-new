@@ -1230,7 +1230,7 @@
 		}
 		//		$(".bottom-left").find(".data-div").eq(index).slideUp(600);
 		//		$(".bottom-left").find(".data-div").eq(index).slideDown(600);
-		//		$(".bottom-left").find(".data-div").eq(index).show().siblings().hide(); 
+		//		$(".bottom-left").find(".data-div").eq(index).show().siblings().hide();
 		//		$(this).find("img").attr("src","images/b-selectd.png");
 	})
 	//热门长沙人流密度排行
@@ -1557,6 +1557,10 @@ $(".jq-name-div").find(".jq-name").click(function () {
 
 
 $(function(){
+	$('.one-dialog-close').on('click',function(){
+		$(this).parent().hide();
+	})
+
 	$('.ts-name').on('click',function(){
 		var $self =$(this);
 		var index = $self.parent().index();
@@ -1602,22 +1606,22 @@ $(function(){
 
 				break;
 			case "1":
-				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-qygs2.png');
+				$tankuang.find('.tk-div').find('img').attr('src','images/new/people-stream-qygs2.png');
 				break;
 			case "2":
-				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-ljy2.png');
+				$tankuang.find('.tk-div').find('img').attr('src','images/new/people-stream-ljy2.png');
 				break;
 			case "3":
-				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-hy2.png');
+				$tankuang.find('.tk-div').find('img').attr('src','images/new/people-stream-hy2.png');
 				break;
 			case "4":
-				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-jz2.png');
+				$tankuang.find('.tk-div').find('img').attr('src','images/new/people-stream-jz2.png');
 				break;
 			case "5":
-				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-hcz2.png');
+				$tankuang.find('.tk-div').find('img').attr('src','images/new/people-stream-hcz2.png');
 				break;
 			case "6":
-				$tankuang.find('.tk-div').find('img').attr('src','../images/new/people-stream-qcz2.png');
+				$tankuang.find('.tk-div').find('img').attr('src','images/new/people-stream-qcz2.png');
 				break;
 			default:
 				break;
@@ -1627,7 +1631,12 @@ $(function(){
 		var $self = $(this);
 		var stationCode = $self.attr('station-code');
 		if(stationCode>4) return;
-		location.href = "http://" + location.host + '/?stationCode=' + stationCode
+		localStorage.setItem('stationCode',stationCode);
+		location.href = location.href;
+	});
+	$('.city-station').on('click',function(){
+		localStorage.removeItem('stationCode');
+		location.href = location.href;
 	});
 
 	function getUrlParam(name) {
@@ -1637,7 +1646,7 @@ $(function(){
 	}
 
 	(function(){
-		var stationCode = getUrlParam('stationCode');
+		var stationCode = localStorage.getItem('stationCode');
 		if(!stationCode) return;
 		var $title = $('.top .title span');
 		var $data = $('.hot .div-list .bottom-density .bottom-density-num,.m_top-top-left-div span');
@@ -1648,7 +1657,7 @@ $(function(){
 		switch(stationCode)
 		{
 			case "0":
-				$title.text('高密市阵地管控平台');
+				$title.text('高密市公安阵地管控平台');
 				$zhanzhang.text('刘润勤');
 				$camera.each(function(index,item){
 					$(item).find('img').attr('src','images/camera/gaomi/'+ (parseInt(index)+1) +'.jpg');
@@ -1724,10 +1733,13 @@ $(function(){
 		$('.two-card-content>ul').prepend($('.two-card-content>ul>li').eq(stationCode));
 		$('.list-hiden>ul').prepend($('.list-hiden>ul>li').eq(stationCode));
 		$('.renliankakouUL').prepend($('.renliankakouUL>li').eq(stationCode));
+		$('.rlsb').attr('src','images/touxiang/1'+ stationCode +'.jpg');
+		$('.m-left .munber,.m-left p').each(function(){ $(this).text(parseInt($(this).text()/4+parseInt(stationCode)*4)) });
+		if(stationCode && stationCode>0) $('.city-station').show();
 	}());
 
-	$('.change-station').on('click',function(){
-		var stationCode = getUrlParam('stationCode');
+	/*$('.change-station').on('click',function(){
+		var stationCode = localStorage.getItem('stationCode');
 		var stationCodeNew = '';
 		if(!stationCode || stationCode == "0"){
 			if($(this).hasClass('change-station-left')){
@@ -1748,9 +1760,9 @@ $(function(){
 				stationCodeNew = "0";
 			}
 		}
-		location.href = "http://" + location.host + '/?stationCode=' + stationCodeNew
+         location.href = location.href;
 	});
-
+*/
 
 	$('#bxslider2').bxSlider({
 		slideMargin: 20
